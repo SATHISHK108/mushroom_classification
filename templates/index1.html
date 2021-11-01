@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/styles.css">
+    <title>Mushroom classification</title>
+</head>
+<body>
+    
+    <div>
+        <h1>Mushroom Classification</h1>
+    </div>
+    <div>
+        <h2>Application is to classify Mushroom as Edible or Poisonous</h2>
+    </div>
+    <div>
+        <p>Fill the parameters to Classify the Mushroom</p>
+    </div>
+    <div>
+        <form action="/predict" method="POST">
+            <select name="cap-shape">
+                <option value="" selected disabled hidden>Cap-Shape</option>
+                <option value="x">Convex</option>
+                <option value="b">Bell</option>
+                <option value="s">Sunken</option>
+                <option value="f">Flat</option>
+                <option value="k">Knobbed</option>
+                <option value="c">Conical</option>
+            </select><br><br>
+
+            <select name="cap-surface" id="">
+                <option value="" selected disabled hidden>Cap-Surface</option>
+                <option value="y">Scaly</option>
+                <option value="f">Fibrous</option>
+                <option value="g">Grooves</option>
+                <option value="s">Smooth</option>
+            </select><br><br>
+
+            <select name="cap-color" id="">
+                <option value=""selected disabled hidden>Cap-Color</option>
+                <option value="y">Yellow</option>
+                <option value="w">White</option>
+                <option value="g">Gray</option>
+                <option value="e">Red</option>
+                <option value="p">Pink</option>
+                <option value="b">Buff</option>
+                <option value="u">Purple</option>
+                <option value="c">Cinnamon</option>
+                <option value="r">Green</option>
+                <option value="n">Brown</option> 
+            </select><br><br>
+
+            <select name="bruises" id="">
+                <option value=""selected disabled hidden>Bruises</option>
+                <option value="t">Bruises</option>
+                <option value="f">No</option>
+            </select><br><br>
+
+            <select name="odor" id="">
+                <option value=""selected disabled hidden>Odor</option>
+                <option value="p">Pungent</option>
+                <option value="a">Almond</option>
+                <option value="l">Anise</option>
+                <option value="n">None</option>
+                <option value="f">Foul</option>
+                <option value="c">Creosote</option>
+                <option value="y">Fishy</option>
+                <option value="s">Spicy</option>
+                <option value="m">Musty</option>
+            </select><br><br>
+
+            <select name="gill-attachment" id="">
+                <option value=""selected disabled hidden>Gill-Attachment</option>
+                <option value="f">Free</option>
+                <option value="a">Attached</option>
+                <option value="d">Descending</option>
+                <option value="n">Notched</option>
+            </select><br><br>
+
+            <select name="gill-spacing" id="">
+                <option value=""selected disabled hidden>Gill-Spacing</option>
+                <option value="c">Close</option>
+                <option value="w">Crowded</option>
+                <option value="d">Distant</option>
+            </select><br><br>
+
+            <select name="gill-size" id="">
+                <option value=""selected disabled hidden>Gill-Size</option>
+                <option value="n">Narrow</option>
+                <option value="b">Broad</option>
+            </select><br><br>
+
+            <select name="gill-color" id="">
+                <option value=""selected disabled hidden>Gill-Color</option>
+                <option value="k">Black</option>
+                <option value="n">Brown</option>
+                <option value="g">Gray</option>
+                <option value="p">Pink</option>
+                <option value="w">White</option>
+                <option value="h">Chocolate</option>
+                <option value="u">Purple</option>
+                <option value="e">White</option>
+                <option value="b">Buff</option>
+                <option value="r">kGreen</option>
+                <option value="y">Yellow</option>
+                <option value="o">Orange</option>
+            </select><br><br>
+
+            <select name="stalk-shape" id="">
+                <option value=""selected disabled hidden>Stalk-Shape</option>
+                <option value="e">Enlarging</option>
+                <option value="t">Tapering</option>
+            </select><br><br>
+
+            <select name="stalk-root" id="">
+                <option value=""selected disabled hidden>Stalk-Root</option>
+                <option value="e">Equal</option>
+                <option value="c">Club</option>
+                <option value="b">Bulbous</option>
+                <option value="r">Rooted</option>
+                <option value="?">Missing</option>
+            </select><br><br>
+
+            <select name="stalk-surface-above-ring" id="">
+                <option value=""selected disabled hidden>Stalk-Surface-Above-Ring</option>
+                <option value="s">Smooth</option>
+                <option value="f">Fibrous</option>
+                <option value="k">Silky</option>
+                <option value="y">Scaly</option>
+            </select><br><br>
+
+            <select name="stalk-surface-below-ring" id="">
+                <option value=""selected disabled hidden>Stalk-Surface-Below-Ring</option>
+                <option value="s">Smooth</option>
+                <option value="f">Fibrous</option>
+                <option value="k">Silky</option>
+                <option value="y">Scaly</option>
+
+            </select><br><br>
+
+            <select name="stalk-color-above-ring" id="">
+                <option value=""selected disabled hidden>Stalk-Color-Above-Ring</option>
+                <option value="w">White</option>
+                <option value="g">Gray</option>
+                <option value="p">Pink</option>
+                <option value="n">Brown</option>
+                <option value="b">Buff</option>
+                <option value="e">Red</option>
+                <option value="o">Orange</option>
+                <option value="c">Cinnamon</option>
+                <option value="y">Yellow</option>
+
+            </select><br><br>
+
+            <select name="stalk-color-below-ring" id="">
+                <option value=""selected disabled hidden>Stalk-Color-Below-Ring</option>
+                <option value="w">White</option>
+                <option value="g">Gray</option>
+                <option value="p">Pink</option>
+                <option value="n">Brown</option>
+                <option value="b">Buff</option>
+                <option value="e">Red</option>
+                <option value="o">Orange</option>
+                <option value="c">Cinnamon</option>
+                <option value="y">Yellow</option>
+
+            </select><br><br>
+
+            <select name="veil-type" id="">
+                <option value=""selected disabled hidden>Veil-Type</option>
+                <option value="p">Partial</option>
+                
+            </select><br><br>
+
+            <select name="veil-color" id="">
+                <option value=""selected disabled hidden>Veil-Color</option>
+                <option value="w">White</option>
+                <option value="n">Brown</option>
+                <option value="o">Orange</option>
+                <option value="y">Yellow</option>
+
+            </select><br><br>
+
+            <select name="ring-number" id="">
+                <option value=""selected disabled hidden>Ring-Number</option>
+                <option value="o">One</option>
+                <option value="t">Two</option>
+                <option value="n">None</option>
+
+            </select><br><br>
+
+            <select name="ring-type" id="">
+                <option value=""selected disabled hidden>Ring-Type</option>
+                <option value="p">Pendant</option>
+                <option value="e">Evanescent</option>
+                <option value="l">Large</option>
+                <option value="f">Flaring</option>
+                <option value="n">One</option>
+                <option value="c">Cobwebby</option>
+                <option value="s">Sheathing</option>
+                <option value="z">Zone</option>
+
+            </select><br><br>
+
+            <select name="spore-print-color" id="">
+                <option value=""selected disabled hidden>Spore-Print-Color</option>
+                <option value="k">Black</option>
+                <option value="n">Brown</option>
+                <option value="u">Purple</option>
+                <option value="h">Chocolate</option>
+                <option value="w">White</option>
+                <option value="r">Green</option>
+                <option value="o">Orange</option>
+                <option value="y">Yellow</option>
+                <option value="b">Buff</option>
+
+            </select><br><br>
+
+            <select name="population" id="">
+                <option value=""selected disabled hidden>Population</option>
+                <option value="s">Scattered</option>
+                <option value="n">Numerous</option>
+                <option value="a">Abundant</option>
+                <option value="v">Several</option>
+                <option value="y">Solitary</option>
+                <option value="c">Clustered</option>
+
+            </select><br><br>
+
+            <select name="habitat" id="">
+                <option value=""selected disabled hidden>Habitat</option>
+                <option value="u">Urban</option>
+                <option value="g">Grasses</option>
+                <option value="m">Measows</option>
+                <option value="d">Woods</option>
+                <option value="p">Paths</option>
+                <option value="w">Waste</option>
+                <option value="l">Leaves</option>
+
+            </select><br><br>
+
+            <input type="submit" value="Predict"><br><br><br><br>
+
+            <a target="_blank" href="https://github.com/SATHISHK108?tab=repositories">
+                <img alt="GitHub" src="../static/git.png" width="100" height="50"></a> 
+
+        </form>
+
+    <div>
+        <p>Made with ❤️ by SATHISH.</p>
+    </div>
+</body>
+</html>

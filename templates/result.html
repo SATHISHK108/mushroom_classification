@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mushroom's Classified</title>
+    <link rel="stylesheet" type="text/css" href="../static/styles.css">
+</head>
+<body>
+    <h1>Mushroom Classification</h1>
+    <h2>Result as per the given parameter</h2>
+
+    <div>
+        
+        {% if prediction=='0' %}
+            <p class='result'>Its Poisonous</p>
+        {% elif prediction=='1' %}
+            <p class='result1'>Its Edible</p>
+        {% endif %}
+
+    </div>
+    <div>
+        <p class='result2'><a target="_blank" href="https://github.com/SATHISHK108?tab=repositories">
+            <img alt="GitHub" src="../static/git.png" width="100" height="50"></a></p>
+    </div>
+
+    <div>
+        <p>Made with ❤️ by SATHISH.</p>
+    </div>
+    
+</body>
+</html>
